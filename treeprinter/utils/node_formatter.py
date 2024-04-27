@@ -1,5 +1,5 @@
 import colorama.initialise
-from PrettyPrint.Utils.StyleAwareUtils import ljust, text_width
+from treeprinter.utils.style_aware_utils import ljust, text_width
 
 
 class NodeFormatter:

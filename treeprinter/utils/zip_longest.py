@@ -3,7 +3,7 @@ from typing import TypeVar
 T = TypeVar("T")
 
 
-def zip_longest(*iters: [T], default: T):
+def zip_longest(*iters: list[T], default: T):
     lens = [len(x) for x in iters]
     for line in range(max(lens)):
         yield tuple(
