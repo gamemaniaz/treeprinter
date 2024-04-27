@@ -1,8 +1,8 @@
 from typing import Callable, Iterable, Any, TypeVar
 from colorama import Back
-from PrettyPrint.PrintTree.JsonTree import JsonTree
-from PrettyPrint.PrintTree.TreeFormatter import TreeFormatter
-from PrettyPrint.Utils.Orientation import Orientation
+from treeprinter.tree_printer.json_tree import JsonTree
+from treeprinter.tree_printer.tree_formatter import TreeFormatter
+from treeprinter.utils.orientation import Orientation
 
 
 T = TypeVar("T")

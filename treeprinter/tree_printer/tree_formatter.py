@@ -1,10 +1,10 @@
 from typing import Callable, Iterable, Any, TypeVar
 
-from PrettyPrint.PrintTree.HorizontalTree import join_vertically, add_parent as add_parent_left
-from PrettyPrint.PrintTree.VerticalTree import join_horizontally, add_parent as add_parent_top
-from PrettyPrint.Utils.NodeFormatter import NodeFormatter
-from PrettyPrint.Utils.Orientation import Orientation
-from PrettyPrint.Utils.StyleAwareUtils import trim_text
+from treeprinter.tree_printer.horizontal_tree import join_vertically, add_parent as add_parent_left
+from treeprinter.tree_printer.vertical_tree import join_horizontally, add_parent as add_parent_top
+from treeprinter.utils.node_formatter import NodeFormatter
+from treeprinter.utils.orientation import Orientation
+from treeprinter.utils.style_aware_utils import trim_text
 
 T = TypeVar("T")
 

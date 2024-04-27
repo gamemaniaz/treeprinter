@@ -1,23 +1,23 @@
-from PrettyPrint.Utils.NodeFormatter import NodeFormatter
-from PrettyPrint.Utils.StyleAwareUtils import ljust
-from PrettyPrint.Utils.ZipLongest import zip_longest
+from treeprinter.utils.node_formatter import NodeFormatter
+from treeprinter.utils.style_aware_utils import ljust
+from treeprinter.utils.zip_longest import zip_longest
 
 
-def join_vertically(boxes: [NodeFormatter]) -> NodeFormatter:
+def join_vertically(boxes: list[NodeFormatter]) -> NodeFormatter:
     lines, width, height = join_boxes(boxes)
     middle = add_pipes(boxes, lines)
     width += 1
     return NodeFormatter(lines, height=height, width=width, middle_height=middle)
 
 
-def join_boxes(boxes: [NodeFormatter]) -> ([str], int, int):
+def join_boxes(boxes: list[NodeFormatter]) -> tuple[list[str], int, int]:
     lines = [line for box in boxes for line in box.lines]
     width = max(box.width for box in boxes)
     height = sum(box.height for box in boxes) + len(boxes) - 1
     return lines, width, height
 
 
-def add_pipes(boxes: [NodeFormatter], lines: [str]) -> int:
+def add_pipes(boxes: list[NodeFormatter], lines: list[str]) -> int:
     start = boxes[0].get_middle_height()
     end = boxes[-1].get_middle_height() + sum(box.height for box in boxes[:-1])
     middles = iter(box.get_middle_height() for box in boxes[1:-1])
